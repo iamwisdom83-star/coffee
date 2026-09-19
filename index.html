@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COFFEE HOUSE</title>
+    <link rel="stylesheet" href="display.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="#">COFFEE HOUSE</a>
+        <nav class="site-nav" aria-label="주요 메뉴">
+            <ul class="site-nav-list">
+                <li><a href="#menu">메뉴</a></li>
+                <li><a href="#store">매장찾기</a></li>
+                <li><a href="#membership">멤버십</a></li>
+                <li><a href="#news">소식</a></li>
+                <li><a class="order-link" href="#order">온라인 주문</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <p class="hero-kicker">YOUR DAILY PAUSE</p>
+                <h1 class="hero-title">오늘도, 커피처럼<br><em>따뜻하게</em></h1>
+                <p class="hero-copy">당신의 하루에 머무는 가장 향기로운 순간<br>COFFEE HOUSE가 가까이에서 함께합니다.</p>
+                <a class="hero-link" href="#menu">메뉴 둘러보기&nbsp; →</a>
+            </div>
+        </section>
+        <section class="menu-section" id="menu">
+            <div class="content-width">
+                <p class="section-kicker">COFFEE MENU</p>
+                <h2 class="section-title">오늘의 추천 메뉴</h2>
+                <div class="menu-grid">
+                    <article class="menu-card">
+                        <img src="image/coffee1.jpg" alt="아메리카노">
+                        <div class="menu-card-content">
+                            <h3>시그니처 아메리카노</h3>
+                            <p>깊고 진한 풍미의 클래식 커피</p>
+                            <strong class="menu-price">4,500원</strong>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <img src="image/coffee2.jpg" alt="카페라떼">
+                        <div class="menu-card-content">
+                            <h3>부드러운 카페라떼</h3>
+                            <p>고소한 에스프레소와 포근한 우유</p>
+                            <strong class="menu-price">5,500원</strong>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <img src="image/coffee3.jpg" alt="바닐라라떼">
+                        <div class="menu-card-content">
+                            <h3>달콤한 바닐라라떼</h3>
+                            <p>은은한 바닐라 향을 더한 시그니처 라떼</p>
+                            <strong class="menu-price">6,000원</strong>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="data-section" aria-label="COFFEE HOUSE 현황">
+            <div class="content-width">
+                <p class="section-kicker">COFFEE HOUSE DATA</p>
+                <div class="data-grid">
+                    <div class="data-item">
+                        <strong class="slot-number" data-target="128" aria-label="가맹점 수 128개">000</strong>
+                        <span class="data-label">가맹점 수</span>
+                    </div>
+                    <div class="data-item">
+                        <strong class="slot-number" data-target="24" aria-label="메뉴 개수 24개">00</strong>
+                        <span class="data-label">메뉴 개수</span>
+                    </div>
+                </div>
+            </div>
+            <script>
+                document.querySelectorAll('.slot-number').forEach(function (slot) {
+                    var target = Number(slot.dataset.target), duration = 1800, start = performance.now();
+                    function roll(now) {
+                        var progress = Math.min((now - start) / duration, 1);
+                        var eased = 1 - Math.pow(1 - progress, 3);
+                        slot.textContent = String(Math.floor(target * eased)).padStart(String(target).length, '0');
+                        if (progress < 1) requestAnimationFrame(roll);
+                        else slot.textContent = String(target);
+                    }
+                    requestAnimationFrame(roll);
+                });
+            </script>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <div class="content-width">
+            <div class="footer-main">
+                <div class="footer-brand-block">
+                    <a class="footer-brand" href="#">COFFEE HOUSE</a>
+                    <p class="footer-description">일상에 따뜻한 쉼표를 전하는<br>커피 프랜차이즈입니다.</p>
+                </div>
+                <div>
+                    <h3 class="footer-heading">가맹 안내</h3>
+                    <ul class="footer-links">
+                        <li><a href="#franchise">가맹점 개설 안내</a></li>
+                        <li><a href="#franchise">창업 상담 신청</a></li>
+                        <li><a href="#store">매장 찾기</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-heading">고객센터</h3>
+                    <strong class="customer-number">1588-0000</strong>
+                    <p class="contact-hours">평일 09:00 - 18:00<br>주말 및 공휴일 휴무</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="business-info">(주)커피하우스&nbsp;&nbsp;|&nbsp;&nbsp;대표이사 홍길동&nbsp;&nbsp;|&nbsp;&nbsp;사업자등록번호 123-45-67890</p>
+                <p class="business-info">서울특별시 커피로 123, 커피하우스빌딩&nbsp;&nbsp;|&nbsp;&nbsp;대표전화 1588-0000</p>
+                <div class="legal-links">
+                    <a href="#terms">이용약관</a>
+                    <a class="privacy-link" href="#privacy">개인정보처리방침</a>
+                    <a href="#email">이메일무단수집거부</a>
+                </div>
+                <p class="copyright">© 2024 COFFEE HOUSE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

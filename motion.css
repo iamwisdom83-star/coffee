@@ -1,0 +1,46 @@
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes casino-roll {
+    0% {
+        opacity: .25;
+        transform: translateY(-18px);
+    }
+    70% {
+        opacity: 1;
+        transform: translateY(5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.hero-kicker,
+.hero-title,
+.hero-copy,
+.hero-link {
+    animation: fade-up 1s ease both;
+}
+
+.hero-title { animation-delay: .2s; }
+.hero-copy { animation-delay: .4s; }
+.hero-link { animation-delay: .6s; }
+.slot-number { animation: casino-roll .8s cubic-bezier(.2, .8, .2, 1) both; }
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        scroll-behavior: auto !important;
+        transition: none !important;
+    }
+}

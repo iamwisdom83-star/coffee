@@ -1,0 +1,91 @@
+@media (max-width: 768px) {
+    .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+        padding: 22px 24px;
+        background: rgba(255, 255, 255, .96);
+        box-shadow: 0 4px 16px rgba(59, 36, 22, .08);
+        backdrop-filter: blur(10px);
+    }
+
+    .site-nav,
+    .site-nav-list {
+        width: 100%;
+    }
+
+    .site-nav-list {
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 14px 20px;
+    }
+
+    .site-nav-list li:last-child {
+        margin-left: auto;
+    }
+
+    .hero { min-height: 500px; }
+    .hero-content { padding: 36px 20px; }
+    .menu-section { padding: 56px 24px; }
+    .section-title { margin-bottom: 28px; font-size: 30px; }
+    .menu-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .menu-card img { height: 190px; }
+    .menu-card-content { padding: 18px; }
+    .data-section { padding: 56px 24px; }
+    .data-grid { gap: 24px; }
+    .site-footer { padding: 42px 24px 24px; }
+    .footer-main { gap: 30px; }
+}
+
+@media (max-width: 480px) {
+    .site-header { padding: 20px 18px; }
+    .brand { font-size: 22px; }
+    .site-nav-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    .site-nav-list li:last-child { margin-left: 0; }
+    .site-nav-list li:last-child a {
+        display: block;
+        padding: 9px 12px;
+        text-align: center;
+    }
+    .hero { min-height: 460px; }
+    .hero-title {
+        font-size: clamp(38px, 10vw, 64px);
+        letter-spacing: -2px;
+    }
+    .hero-copy {
+        margin: 22px 0 28px;
+        font-size: 15px;
+        line-height: 1.7;
+    }
+    .menu-section { padding: 48px 18px; }
+    .menu-grid { grid-template-columns: 1fr; }
+    .menu-card img { height: 210px; }
+    .data-section { padding: 48px 18px; }
+    .data-grid {
+        align-items: center;
+        flex-direction: column;
+        gap: 28px;
+    }
+    .data-item {
+        width: 100%;
+        min-width: 0;
+    }
+    .slot-number { font-size: 42px; }
+    .site-footer { padding: 38px 18px 22px; }
+    .footer-main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px 18px;
+    }
+    .footer-brand-block {
+        grid-column: 1 / -1;
+        min-width: 0;
+    }
+}
